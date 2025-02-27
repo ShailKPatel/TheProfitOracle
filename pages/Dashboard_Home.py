@@ -53,7 +53,7 @@ To ensure accurate analysis, uploaded files must follow these guidelines:
     - `Manufacturing_Cost`
     - `Category`
 
-### **3️⃣ Customer Data **
+### **3️⃣ Customer Data (Mandatory)**
 - **File Format**: CSV or Excel  
 - **Required Columns**:
   - `CID` (Customer ID) **[Unique]**
