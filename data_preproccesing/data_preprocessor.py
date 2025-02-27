@@ -163,7 +163,7 @@ def process_customer_file(file_path):
 
 if __name__ == "__main__":
     # Example usage of the functions
-    product_df = process_product_file("tests/p2.csv")
+    product_df = process_product_file("tests/p3.csv")
     sales_df = process_sales_file("tests/s2.csv")
     customer_df = process_customer_file("tests/c2.csv")
 

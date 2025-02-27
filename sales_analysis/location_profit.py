@@ -10,7 +10,7 @@ def analyze_category_and_profit(sales_df, products_df):
 
     Parameters:
     - sales_df (pd.DataFrame): Contains 'Location', 'PID', 'Sales_Price'.
-    - products_df (pd.DataFrame): Contains 'PID', 'Product_Name', 'P_Description', 'Price', 'Category'.
+    - products_df (pd.DataFrame): Contains 'PID', 'Product_Name', 'P_Description', 'Manufacturing Cost', 'Category'.
 
     Returns:
     - matplotlib.figure.Figure: A figure containing two subplots.
@@ -23,7 +23,7 @@ def analyze_category_and_profit(sales_df, products_df):
     category_counts = sales_with_products.groupby(["Location", "Category"])["PID"].count().unstack().fillna(0)
 
     # === Step 3: Profit Calculation ===
-    sales_with_products["Profit"] = sales_with_products["Sales_Price"] - sales_with_products["Price"]
+    sales_with_products["Profit"] = sales_with_products["Sales_Price"] - sales_with_products["Manufacturing Cost"]
     location_profit = sales_with_products.groupby("Location")["Profit"].sum().reset_index()
 
     # === Step 4: Plotting ===
@@ -48,7 +48,7 @@ def analyze_category_and_profit(sales_df, products_df):
 
     # Display values inside heatmap cells
     for i, profit in enumerate(profits):
-        axes[1].text(0, i, f"{int(profit[0])}", ha="center", va="center", fontsize=12, fontweight="bold", color="black")
+        axes[1].text(0, i, f"{int(profit[0])}", ha="center", va="center", fontsize=8, color="black")
 
     axes[1].set_xticks([])  # Remove x-axis ticks
     axes[1].set_yticks(range(len(locations)))
@@ -59,7 +59,7 @@ def analyze_category_and_profit(sales_df, products_df):
 
     # Add color bar
     cbar = plt.colorbar(heatmap, ax=axes[1], fraction=0.046, pad=0.04)
-    cbar.set_label("Profit", fontsize=12)
+    cbar.set_label("Profit", fontsize=8)
 
     plt.tight_layout()
     return fig

@@ -56,7 +56,7 @@ def predict_quantity_sold(sales_df, ax):
 
 def correlation_matrix(sales_df, products_df, customers_df, ax):
     """
-    Generates a correlation matrix for Quantity_Sold, Sales_Price, Price, and Age.
+    Generates a correlation matrix for Quantity_Sold, Sales_Price, Manufacturing Cost, and Age.
     
     Parameters:
     - sales_df (pd.DataFrame)
@@ -69,11 +69,11 @@ def correlation_matrix(sales_df, products_df, customers_df, ax):
     """
 
     # Merge datasets
-    merged_df = sales_df.merge(products_df[["PID", "Price"]], on="PID", how="left")
+    merged_df = sales_df.merge(products_df[["PID", "Manufacturing Cost"]], on="PID", how="left")
     merged_df = merged_df.merge(customers_df[["CID", "Age"]], on="CID", how="left")
 
     # Select relevant numerical columns
-    correlation_data = merged_df[["Quantity_Sold", "Sales_Price", "Price", "Age"]].dropna()
+    correlation_data = merged_df[["Quantity_Sold", "Sales_Price", "Manufacturing Cost", "Age"]].dropna()
 
     if correlation_data.empty:
         ax.text(0.5, 0.5, "No valid correlation data", ha="center", va="center", fontsize=12)
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     # Convert columns to numeric
     sales_df["Sales_Price"] = pd.to_numeric(sales_df["Sales_Price"], errors="coerce")
     sales_df["Quantity_Sold"] = pd.to_numeric(sales_df["Quantity_Sold"], errors="coerce")
-    products_df["Price"] = pd.to_numeric(products_df["Price"], errors="coerce")
+    products_df["Manufacturing Cost"] = pd.to_numeric(products_df["Manufacturing Cost"], errors="coerce")
     customers_df["Age"] = pd.to_numeric(customers_df["Age"], errors="coerce")
 
     # Generate the final combined figure

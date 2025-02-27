@@ -1,4 +1,4 @@
-PID,Product_Name,P_Description,Price,Category
+PID,Product_Name,P_Description,Manufacturing Cost,Category
 P001,Laptop,High-performance laptop,75000,
 ,Phone,Smartphone with 5G,,Electronics
 P003,Headphones,Noise-canceling,3000,Accessories

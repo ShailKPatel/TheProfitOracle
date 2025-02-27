@@ -1,4 +1,4 @@
-PID,Product_Name,P_Description,Price,Category
+PID,Product_Name,P_Description,Manufacturing Cost,Category
 P001,Laptop,High-performance laptop,75000,Electronics
 P002,Smartphone,Latest model smartphone,50000,Electronics
 P003,T-shirt,Cotton casual t-shirt,1500,Clothing
