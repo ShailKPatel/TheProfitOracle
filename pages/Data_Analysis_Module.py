@@ -1,12 +1,8 @@
 import streamlit as st
 import pandas as pd
-import core_functionality.data_validator as dv
-import analysis.teacher_analysis as ta
-import analysis.subject_analysis as sa
-import bias_analysis.bias_detection as bd
 
 # Logo
-image = "images/logo.png"
+image = "assets/logo.png"
 st.logo(image, size='large')
 
 # -------------------------------
