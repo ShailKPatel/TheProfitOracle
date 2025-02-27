@@ -36,11 +36,11 @@ def analyze_profit_per_category(sales_df, products_df):
 
     # Plot manufacturing cost (Red)
     ax.bar(indices - bar_width / 2, category_stats["Avg_Manufacturing_Cost"], 
-           width=bar_width, color="red", edgecolor="black", label="Avg Manufacturing Cost")
+            width=bar_width, color="red", edgecolor="black", label="Avg Manufacturing Cost")
 
     # Plot selling price (Green)
     ax.bar(indices + bar_width / 2, category_stats["Avg_Sales_Price"], 
-           width=bar_width, color="green", edgecolor="black", label="Avg Sales Price")
+            width=bar_width, color="green", edgecolor="black", label="Avg Sales Price")
 
     # Annotate values on bars
     for i, category in enumerate(categories):

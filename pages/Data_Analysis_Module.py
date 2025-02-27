@@ -1,9 +1,11 @@
 import streamlit as st
-import pandas as pd
 import data_preproccesing.data_preprocessor as dp
 import traceback
 import sales_analysis.sales_trends as sts
-
+import sales_analysis.repeat_customers as rc
+import sales_analysis.profit_per_category as ppc
+import sales_analysis.location_sales_analysis as lsa
+import  sales_analysis.location_profit as lp
 
 # Logo
 image = "assets/logo.png"
@@ -88,26 +90,36 @@ if product_file and sales_file and customer_file:
         if st.button("Sales Trends 📊"):
             fig = sts.plot_sales_trends(sales_df)
             st.pyplot(fig)
-                
-                
-        if st.button("⚖️ Gender Bias Detection"):
-            st.write("✅ Bias analysis complete! If the results make you uncomfortable, welcome to reality. 😉")
 
 
-        if st.button("☪️✝️🕉️ Religious Bias Detection"):
-            st.write("✅ Bias analysis complete! If the results are shocking, just remember—faith can move mountains, but data doesn’t lie. 📊😉")
+        if st.button("Reapeat Customers🔁"):
+            repeat_customer_df, fig = rc.analyze_repeat_customers(sales_df)
+            st.dataframe(repeat_customer_df, use_container_width=True, hide_index=True)
+            st.pyplot(fig)
 
 
-        if st.button("📊 Subject Showdown: Which One Wins?"):
+        if st.button("Categorywise profit💵"):
+            fig = ppc.analyze_profit_per_category(sales_df, product_df)
+            st.pyplot(fig)
+
+
+        if st.button("Sales Location analysis🗺"):
+            fig = lsa.analyze_sales_by_location(sales_df, customer_df)
+            st.pyplot(fig)
+            
+            
+        if st.button("Locationwise Profit📊"):
+            fig = lp.analyze_category_and_profit(sales_df, product_df)
+            st.pyplot(fig)
+            
+            
+        if st.button("📊 Subject Sh Wins?"):
             st.write("✅ Bias analysis complete! If the results are shocking, just remember—faith can move mountains, but data doesn’t lie. 📊😉")
             
     except Exception as e:
         st.error(f"You didn't follow Upload Rules`: {e}")
 
-# -------------------------------
 # Closing Line
-# -------------------------------
-
 st.markdown("📜 *Under MIT License*")
 
 
