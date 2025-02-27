@@ -51,7 +51,7 @@ def plot_sales_trends(sales_df):
 
     # === Plotting ===
     # Create a figure with 3 vertically stacked subplots
-    fig, axes = plt.subplots(3, 1, figsize=(12, 14))
+    fig, axes = plt.subplots(3, 1, figsize=(30, 50))
 
     # Define a color scheme for better visualization
     colors = {"sales": "#1f77b4", "ma": "#d62728"}  # Blue for sales, Red for moving avg
@@ -59,25 +59,28 @@ def plot_sales_trends(sales_df):
     # --- Daily Sales Plot ---
     axes[0].plot(daily_sales.index, daily_sales, label="Daily Sales", color=colors["sales"], alpha=0.7)
     axes[0].plot(daily_sales_ma.index, daily_sales_ma, label="7-Day Moving Avg", color=colors["ma"], linestyle="--", linewidth=2)
-    axes[0].set_title("Daily Sales Trend", fontsize=14, fontweight="bold")
-    axes[0].set_ylabel("Total Sales", fontsize=12)
-    axes[0].legend()
+    axes[0].set_title("Daily Sales Trend", fontsize=30, fontweight="bold")
+    axes[0].set_ylabel("Total Sales", fontsize=20)
+    axes[0].tick_params(axis='both', labelsize=18)  # Increase tick label size
+    axes[0].legend(fontsize=18)  # Increase legend font size
     axes[0].grid(True, linestyle="--", alpha=0.6)
 
     # --- Weekly Sales Plot ---
     axes[1].plot(weekly_sales.index, weekly_sales, label="Weekly Sales", color=colors["sales"], alpha=0.7)
     axes[1].plot(weekly_sales_ma.index, weekly_sales_ma, label="4-Week Moving Avg", color=colors["ma"], linestyle="--", linewidth=2)
-    axes[1].set_title("Weekly Sales Trend", fontsize=14, fontweight="bold")
-    axes[1].set_ylabel("Total Sales", fontsize=12)
-    axes[1].legend()
+    axes[1].set_title("Weekly Sales Trend", fontsize=30, fontweight="bold")
+    axes[1].set_ylabel("Total Sales", fontsize=20)
+    axes[1].tick_params(axis='both', labelsize=18)  # Increase tick label size
+    axes[1].legend(fontsize=18)  # Increase legend font size
     axes[1].grid(True, linestyle="--", alpha=0.6)
 
     # --- Monthly Sales Plot ---
     axes[2].plot(monthly_sales.index, monthly_sales, label="Monthly Sales", color=colors["sales"], alpha=0.7)
     axes[2].plot(monthly_sales_ma.index, monthly_sales_ma, label="3-Month Moving Avg", color=colors["ma"], linestyle="--", linewidth=2)
-    axes[2].set_title("Monthly Sales Trend", fontsize=14, fontweight="bold")
-    axes[2].set_ylabel("Total Sales", fontsize=12)
-    axes[2].legend()
+    axes[2].set_title("Monthly Sales Trend", fontsize=30, fontweight="bold")
+    axes[2].set_ylabel("Total Sales", fontsize=20)
+    axes[2].tick_params(axis='both', labelsize=18)  # Increase tick label size
+    axes[2].legend(fontsize=18)  # Increase legend font size
     axes[2].grid(True, linestyle="--", alpha=0.6)
 
 

@@ -51,7 +51,7 @@ def gradient_descent(x, y, w, b, learning_rate, epochs):
     
     return w, b
 
-def linear_regression(x, y, learning_rate=0.01, epochs=1000):
+def linear_regression_custom(x, y, learning_rate=0.01, epochs=1000):
     """
     Performs simple linear regression using gradient descent.
     Returns optimized values of w (weight) and b (bias).
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     y = np.array([2, 4, 6, 8, 10])  # Dependent variable
     
     # Train model
-    w, b = linear_regression(x, y)
+    w, b = linear_regression_custom(x, y)
     
     print(f"Optimized weight (w): {w:.4f}")
     print(f"Optimized bias (b): {b:.4f}")

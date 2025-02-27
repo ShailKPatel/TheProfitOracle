@@ -31,7 +31,7 @@ def analyze_sales_by_location(sales_df, customers_df):
     median_age = sales_with_customers.groupby("Location")["Age"].median()
 
     # === Step 5: Plotting ===
-    fig, axes = plt.subplots(3, 1, figsize=(24, 36))
+    fig, axes = plt.subplots(3, 1, figsize=(48, 72))
     plt.subplots_adjust(hspace=0.5)  # Better spacing between subplots
 
     # === Plot 1: Total Sales Per Location ===

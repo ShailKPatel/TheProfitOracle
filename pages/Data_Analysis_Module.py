@@ -5,7 +5,8 @@ import sales_analysis.sales_trends as sts
 import sales_analysis.repeat_customers as rc
 import sales_analysis.profit_per_category as ppc
 import sales_analysis.location_sales_analysis as lsa
-import  sales_analysis.location_profit as lp
+import sales_analysis.location_profit as lp
+import prediction.sales_analysis as sa
 
 # Logo
 image = "assets/logo.png"
@@ -113,8 +114,10 @@ if product_file and sales_file and customer_file:
             st.pyplot(fig)
             
             
-        if st.button("📊 Subject Sh Wins?"):
-            st.write("✅ Bias analysis complete! If the results are shocking, just remember—faith can move mountains, but data doesn’t lie. 📊😉")
+        if st.button("Sales Analysis📶"):
+            fig = sa.generate_combined_figure(sales_df, product_df, customer_df)
+            st.pyplot(fig)
+
             
     except Exception as e:
         st.error(f"You didn't follow Upload Rules`: {e}")

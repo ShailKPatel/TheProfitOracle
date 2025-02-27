@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from linear_regression import linear_regression  # Correct import
+from .linear_regression import linear_regression_custom
 
 def predict_quantity_sold(sales_df, ax):
     """
@@ -32,7 +32,7 @@ def predict_quantity_sold(sales_df, ax):
     y_norm = (y - y_mean) / y_std
 
     # Train the model
-    w_norm, b_norm = linear_regression(X_norm, y_norm, learning_rate=0.001, epochs=10000)
+    w_norm, b_norm = linear_regression_custom(X_norm, y_norm, learning_rate=0.001, epochs=10000)
 
     # Convert back to original scale
     w = w_norm * (y_std / X_std)
