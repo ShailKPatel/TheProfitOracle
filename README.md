@@ -114,8 +114,6 @@ Contributions are welcome! Feel free to fork this repo and submit a pull request
 
 ### **Author:**
 **Shail Patel**
-- 🔗 Portfolio: [Coming Soon]
-- 📧 Contact: [Your Email]
 
 ---
 
