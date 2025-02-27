@@ -22,59 +22,37 @@ The **Sales Analysis and Prediction System** is a Python-based tool designed for
 ## 📁 **Project Structure**
 ```
 TheProfitOracle/
-M:.
 │   index.py
 │   LICENSE
 │   README.md
+│   requirements.txt
+│   review_records.txt
 │
 ├───assets
 │       logo.png
 │
 ├───data_preproccesing
-│   │   data_preprocessor.py
-│   │
-│   └───__pycache__
-│           data_preprocessor.cpython-312.pyc
+│       data_preprocessor.py
 │
-├───env
 ├───pages
 │       Dashboard_Home.py
 │       Data_Analysis_Module.py
 │       Development_Credits.py
 │       Technological_Framework.py
+│       View_Review.py
 │
 ├───prediction
-│   │   linear_regression.py
-│   │   sales_analysis.py
-│   │
-│   └───__pycache__
-│           linear_regression.cpython-312.pyc
-│           sales_analysis.cpython-312.pyc
+│       linear_regression.py
+│       sales_analysis.py
 │
 ├───sales_analysis
-│   │   location_profit.py
-│   │   location_sales_analysis.py
-│   │   profit_per_category.py
-│   │   repeat_customers.py
-│   │   sales_trends.py
-│   │
-│   └───__pycache__
-│           location_profit.cpython-312.pyc
-│           location_sales_analysis.cpython-312.pyc
-│           profit_per_category.cpython-312.pyc
-│           repeat_customers.cpython-312.pyc
-│           sales_trends.cpython-312.pyc
+│       location_profit.py
+│       location_sales_analysis.py
+│       profit_per_category.py
+│       repeat_customers.py
+│       sales_trends.py
 │
 └───tests
-        c2.csv
-        c3.csv
-        cust.csv
-        p2.csv
-        p3.csv
-        products.csv
-        s2.csv
-        s3.csv
-        sales.csv
 ```
 
 ---

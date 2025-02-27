@@ -9,6 +9,7 @@ home_page = st.Page("pages/Dashboard_Home.py", icon='🏠')  # Primary landing i
 data_analysis_module = st.Page("pages/Data_Analysis_Module.py", icon='🔬')  # Core analytical functionalities
 development_credits = st.Page("pages/Development_Credits.py", icon='🧠')  # Acknowledgments and team contributions
 technological_framework = st.Page("pages/Technological_Framework.py", icon='🛠️')  # Libraries, dependencies, and system architecture
+reviews = st.Page("pages/View_Review.py", icon='📨')  # Libraries, dependencies, and system architecture
 
 # =========================================
 # 🧭 Navigation Configuration
@@ -16,7 +17,7 @@ technological_framework = st.Page("pages/Technological_Framework.py", icon='🛠
 
 # Initialize the navigation system with clearly delineated pages
 navigation_controller = st.navigation(
-    [home_page, data_analysis_module, development_credits, technological_framework]
+    [home_page, data_analysis_module, development_credits, technological_framework,reviews]
 )
 
 # =========================================

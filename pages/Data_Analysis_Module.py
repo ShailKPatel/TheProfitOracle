@@ -1,6 +1,5 @@
 import streamlit as st
 import data_preproccesing.data_preprocessor as dp
-import traceback
 import sales_analysis.sales_trends as sts
 import sales_analysis.repeat_customers as rc
 import sales_analysis.profit_per_category as ppc
