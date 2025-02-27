@@ -1,0 +1,10 @@
+PID,Product_Name,P_Description,Price,Category
+P001,Laptop,High-performance laptop,75000,
+,Phone,Smartphone with 5G,,Electronics
+P003,Headphones,Noise-canceling,3000,Accessories
+,,Double-door fridge,45000,Appliances
+P102,Microwave,Convection ,12000,
+P103,Blender,Multi-speed blender,4000,Kitchen
+P201,Smartwatch,Waterproof smartwatch,15000,Wearables
+P202,TV,55-inch 4K TV,60000,Electronics
+P203,,High-resolution tablet,25000,Electronics
