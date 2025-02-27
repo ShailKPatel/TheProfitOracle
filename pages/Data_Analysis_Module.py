@@ -17,6 +17,9 @@ st.logo(image, size='large')
 st.title("🔬 Data Analysis: Extracting Insights with Precision")
 
 st.subheader("📂 Upload Required Data Files")
+product_file = None
+sales_file = None
+customer_file = None
 
 # File uploaders for three mandatory files
 try:
@@ -25,11 +28,11 @@ try:
     customer_file = st.file_uploader("Upload Customer Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
     
 except Exception as e:
-    st.error(f"You didn't follow Upload Rules`: {e}")
+    st.error(f"You didn't follow Upload Rules`: {e}.\nTry Restaring reloading the page.")
 
         
 # Data Upload Rules
-if (not product_file) and (not sales_file) and (not customer_file):
+if not( product_file and sales_file and customer_file):
     
     st.markdown("""
     ### 📜 **Data Submission Guidelines**  
@@ -118,7 +121,7 @@ try:
 
             
 except Exception as e:
-    st.error(f"You didn't follow Upload Rules`: {e}")
+    st.error(f"You didn't follow Upload Rules`: {e}.\nTry Restaring reloading the page.")
 
 # Closing Line
 st.markdown("📜 *Under MIT License*")
