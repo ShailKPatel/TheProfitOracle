@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def plot_sales_trends(sales_df):
+def plot_sales_trends(sales_df):    
     """
     Analyzes and visualizes sales trends over time.
 

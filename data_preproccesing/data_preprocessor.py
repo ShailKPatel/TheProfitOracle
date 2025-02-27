@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 
 # Define allowed file extensions
 VALID_EXTENSIONS = ('.csv', '.xls', '.xlsx', '.xlsm', '.xlsb')
@@ -17,26 +16,28 @@ class DuplicateKeyError(Exception):
     """Raised when a duplicate key is found in a unique column."""
     pass
 
-def check_extension(file_path):
+def check_extension(file):
     """
-    Checks if the file extension is valid.
-    
+    Checks if the uploaded file has a valid extension.
+
     Parameters:
-        file_path (str): Path of the file to check.
+        file (UploadedFile): Streamlit file uploader object.
 
     Raises:
         InvalidFileExtensionError: If the file extension is not in VALID_EXTENSIONS.
     """
-    _, file_extension = os.path.splitext(file_path)  # Extract file extension
-    if file_extension.lower() not in VALID_EXTENSIONS:
-        raise InvalidFileExtensionError(f"Unsupported file format: {file_extension}")
+    if file is None:
+        raise InvalidFileExtensionError("No file uploaded. Please select a file.")
 
-def convert_to_df(file_path):
+    if not file.name.endswith(VALID_EXTENSIONS):  # Validate file extension from .name attribute
+        raise InvalidFileExtensionError(f"Invalid file format: {file.name}. Allowed formats: {VALID_EXTENSIONS}")
+
+def convert_to_df(file):
     """
-    Attempts to read a file and convert it into a Pandas DataFrame.
+    Reads an uploaded file into a Pandas DataFrame.
 
     Parameters:
-        file_path (str): Path to the file.
+        file (UploadedFile): The uploaded file object.
 
     Returns:
         pd.DataFrame: The loaded DataFrame.
@@ -45,12 +46,12 @@ def convert_to_df(file_path):
         CorruptedFileError: If the file cannot be read as a DataFrame.
     """
     try:
-        if file_path.lower().endswith(".csv"):
-            return pd.read_csv(file_path)  # Read CSV file
+        if file.name.endswith(".csv"):
+            return pd.read_csv(file)  # Read CSV file from file object
         else:
-            return pd.read_excel(file_path)  # Read Excel file
+            return pd.read_excel(file)  # Read Excel file from file object
     except Exception as e:
-        raise CorruptedFileError(f"Failed to load file: {file_path}") from e
+        raise CorruptedFileError(f"Failed to load file: {file.name}") from e
 
 def check_unique_column(df, column_name):
     """
@@ -78,7 +79,7 @@ def remove_empty(df):
     """
     return df.dropna(axis=0)  # Drop rows where any value is NaN
 
-def process_product_file(file_path):
+def process_product_file(file):
     """
     Processes the product file:
     1. Checks file extension.
@@ -87,20 +88,20 @@ def process_product_file(file_path):
     4. Removes columns with NaN values.
 
     Parameters:
-        file_path (str): Path to the product file.
+        file (UploadedFile): The uploaded product file.
 
     Returns:
         pd.DataFrame: Cleaned Product DataFrame.
     """
-    check_extension(file_path)  # Validate file type
-    df = convert_to_df(file_path)  # Convert to DataFrame
+    check_extension(file)  # Validate file type
+    df = convert_to_df(file)  # Convert to DataFrame
 
     df = remove_empty(df)  # Remove empty columns
     check_unique_column(df, "PID")  # Ensure 'PID' is unique
 
     return df  # Return cleaned DataFrame
 
-def process_sales_file(file_path):
+def process_sales_file(file):
     """
     Processes the sales file:
     1. Checks file extension.
@@ -110,13 +111,13 @@ def process_sales_file(file_path):
     5. Removes columns with NaN values.
 
     Parameters:
-        file_path (str): Path to the sales file.
+        file (UploadedFile): The uploaded sales file.
 
     Returns:
         pd.DataFrame: Cleaned Sales DataFrame.
     """
-    check_extension(file_path)
-    df = convert_to_df(file_path)
+    check_extension(file)
+    df = convert_to_df(file)
 
     # Replace NaN values in 'CID' with "0"
     if "CID" in df.columns:
@@ -127,7 +128,7 @@ def process_sales_file(file_path):
 
     return df
 
-def process_customer_file(file_path):
+def process_customer_file(file):
     """
     Processes the customer file:
     1. Checks file extension.
@@ -137,14 +138,13 @@ def process_customer_file(file_path):
     5. Removes columns with NaN values.
 
     Parameters:
-        file_path (str): Path to the customer file.
+        file (UploadedFile): The uploaded customer file.
 
     Returns:
         pd.DataFrame: Cleaned Customer DataFrame.
     """
-    check_extension(file_path)
-    df = convert_to_df(file_path)
-
+    check_extension(file)
+    df = convert_to_df(file)
 
     # Validate Age column
     if "Age" in df.columns:
@@ -160,14 +160,18 @@ def process_customer_file(file_path):
 
     return df
 
-
 if __name__ == "__main__":
-    # Example usage of the functions
-    product_df = process_product_file("tests/p3.csv")
-    sales_df = process_sales_file("tests/s2.csv")
-    customer_df = process_customer_file("tests/c2.csv")
+    # Example usage of the functions with file objects
+    with open("tests/p3.csv", "rb") as product_file, \
+            open("tests/s3.csv", "rb") as sales_file, \
+            open("tests/c3.csv", "rb") as customer_file:
+
+        product_df = process_product_file(product_file)
+        sales_df = process_sales_file(sales_file)
+        customer_df = process_customer_file(customer_file)
 
     # Display loaded DataFrames
     print("Product Data:\n", product_df)
     print("\nSales Data:\n", sales_df)
     print("\nCustomer Data:\n", customer_df)
+

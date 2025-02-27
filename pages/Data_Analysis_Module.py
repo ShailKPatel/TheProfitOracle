@@ -1,5 +1,9 @@
 import streamlit as st
 import pandas as pd
+import data_preproccesing.data_preprocessor as dp
+import traceback
+import sales_analysis.sales_trends as sts
+
 
 # Logo
 image = "assets/logo.png"
@@ -12,13 +16,20 @@ st.title("🔬 Data Analysis: Extracting Insights with Precision")
 st.subheader("📂 Upload Required Data Files")
 
 # File uploaders for three mandatory files
-product_file = st.file_uploader("Upload Product Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
-sales_file = st.file_uploader("Upload Sales Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
-customer_file = st.file_uploader("Upload Customer Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
+try:
+    product_file = st.file_uploader("Upload Product Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
+    sales_file = st.file_uploader("Upload Sales Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
+    customer_file = st.file_uploader("Upload Customer Data (CSV, XLS, XLSX)", type=["csv", "xls", "xlsx"])
+    
+except Exception as e:
+    st.error(f"You didn't follow Upload Rules`: {e}")
+    st.text("🔍 Error Details:")  # Optional label for clarity
+    st.code(traceback.format_exc(), language="python")  # Display the full traceback
 
         
 # Data Upload Rules
 if not product_file and not sales_file and not customer_file:
+    
     st.markdown("""
     ### 📜 **Data Submission Guidelines**  
 
@@ -66,11 +77,17 @@ if not product_file and not sales_file and not customer_file:
     
 # Analysis Options with Witty Labels
 if product_file and sales_file and customer_file:
+    
+    product_df = dp.process_product_file(product_file)
+    sales_df = dp.process_sales_file(sales_file)
+    customer_df = dp.process_customer_file(customer_file)
+    
     st.subheader("Analysis Menu")
     try:
 
-        if st.button("📚 Professor Performance Analyzation"):
-            teacher_score_df = {}
+        if st.button("Sales Trends 📊"):
+            fig = sts.plot_sales_trends(sales_df)
+            st.pyplot(fig)
                 
                 
         if st.button("⚖️ Gender Bias Detection"):
