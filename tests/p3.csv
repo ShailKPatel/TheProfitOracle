@@ -1,0 +1,101 @@
+PID,Product_Name,P_Description,Price,Category
+P001,Laptop,High-performance laptop,75000,Electronics
+P002,Smartphone,Latest model smartphone,50000,Electronics
+P003,T-shirt,Cotton casual t-shirt,1500,Clothing
+P004,Shoes,Running shoes,3000,Footwear
+P005,Book,Mystery novel,500,Books
+P006,Headphones,Wireless noise-cancelling headphones,12000,Electronics
+P007,Watch,Smartwatch with fitness tracking,8000,Electronics
+P008,Jacket,Winter jacket,4500,Clothing
+P009,Backpack,Travel backpack,2000,Accessories
+P010,Tablet,10-inch tablet,5000,Electronics
+P011,Camera,Digital SLR camera,65000,Electronics
+P012,Keyboard,Mechanical keyboard,9000,Electronics
+P013,Jeans,Denim jeans,3500,Clothing
+P014,Socks,Cotton socks pack,700,Clothing
+P015,Pen,Ballpoint pen,150,Stationery
+P016,Speaker,Bluetooth speaker,15000,Electronics
+P017,Perfume,Men's fragrance,9500,Beauty
+P018,Sunglasses,UV protection sunglasses,4000,Accessories
+P019,Wallet,Leather wallet,2500,Accessories
+P020,Coffee Maker,Automatic coffee maker,6000,Home Appliances
+P021,Monitor,27-inch monitor,40000,Electronics
+P022,Mouse,Wireless gaming mouse,8500,Electronics
+P023,Dress,Summer dress,5000,Clothing
+P024,Belt,Leather belt,1200,Accessories
+P025,Notebook,Spiral notebook,300,Stationery
+P026,Earbuds,True wireless earbuds,16000,Electronics
+P027,Shampoo,Hair care shampoo,1000,Beauty
+P028,Cap,Baseball cap,800,Accessories
+P029,Key Chain,Metal key chain,450,Accessories
+P030,Blender,Kitchen blender,6500,Home Appliances
+P031,Printer,Inkjet printer,12000,Electronics
+P032,Router,Wireless router,9000,Electronics
+P033,Skirt,Formal skirt,4500,Clothing
+P034,Tie,Silk tie,1500,Accessories
+P035,Pencil,Graphite pencil,100,Stationery
+P036,Power Bank,Portable power bank,17000,Electronics
+P037,Lotion,Body lotion,1100,Beauty
+P038,Scarf,Wool scarf,1800,Accessories
+P039,Phone Case,Protective phone case,900,Accessories
+P040,Toaster,Electric toaster,7000,Home Appliances
+P041,USB Drive,64GB USB drive,4200,Electronics
+P042,SD Card,128GB SD card,8800,Electronics
+P043,Sweater,Wool sweater,5500,Clothing
+P044,Gloves,Leather gloves,2000,Accessories
+P045,Eraser,Pencil eraser,80,Stationery
+P046,VR Headset,Virtual reality headset,19000,Electronics
+P047,Face Wash,Facial cleanser,1200,Beauty
+P048,Hat,Winter hat,1500,Accessories
+P049,Ring,Silver ring,3800,Jewelry
+P050,Iron,Steam iron,7500,Home Appliances
+P051,Gaming Console,Next-gen gaming console,125000,Electronics
+P052,Smart TV,55-inch 4K Smart TV,95000,Electronics
+P053,Cookware Set,Non-stick cookware set,5500,Home & Kitchen
+P054,Yoga Mat,Non-slip yoga mat,900,Fitness
+P055,Color Pencils,Set of 24 color pencils,280,Stationery
+P056,Drone,Camera drone with GPS,19000,Electronics
+P057,Hair Dryer,Ionic hair dryer,1150,Beauty
+P058,Umbrella,Automatic folding umbrella,1600,Accessories
+P059,Necklace,Silver pendant necklace,3900,Jewelry
+P060,Vacuum Cleaner,Cordless vacuum cleaner,8000,Home Appliances
+P061,Projector,Portable mini projector,43000,Electronics
+P062,External HDD,2TB external hard drive,9200,Electronics
+P063,Hoodie,Fleece hoodie,4800,Clothing
+P064,Slippers,Comfortable house slippers,1100,Footwear
+P065,Highlighter,Set of 4 highlighters,320,Stationery
+P066,Action Camera,4K action camera,20000,Electronics
+P067,Lipstick,Matte finish lipstick,1300,Beauty
+P068,Beanie,Knitted beanie,900,Accessories
+P069,Bracelet,Charm bracelet,2800,Jewelry
+P070,Microwave Oven,Solo microwave oven,7000,Home Appliances
+P071,Graphics Tablet,Digital drawing tablet,45000,Electronics
+P072,SSD,500GB solid state drive,8500,Electronics
+P073,Shorts,Denim shorts,2200,Clothing
+P074,Sandals,Leather sandals,1800,Footwear
+P075,Fountain Pen,Calligraphy fountain pen,1200,Stationery
+P076,Smartwatch,Fitness tracker smartwatch,18000,Electronics
+P077,Nail Polish,Set of 6 nail polishes,800,Beauty
+P078,Tote Bag,Canvas tote bag,1400,Accessories
+P079,Earrings,Silver hoop earrings,2500,Jewelry
+P080,Rice Cooker,Electric rice cooker,6500,Home Appliances
+P081,Webcam,HD webcam with microphone,4000,Electronics
+P082,RAM,16GB DDR4 RAM,8000,Electronics
+P083,Leggings,Sports leggings,1800,Clothing
+P084,Sneakers,Casual sneakers,3500,Footwear
+P085,Glue Stick,Pack of 3 glue sticks,150,Stationery
+P086,Bluetooth Speaker,Portable Bluetooth speaker,17000,Electronics
+P087,Mascara,Volumizing mascara,900,Beauty
+P088,Backpack,Laptop backpack,2200,Accessories
+P089,Ring,Gold ring with diamond,18000,Jewelry
+P090,Air Fryer,Digital air fryer,9000,Home Appliances
+P091,Keyboard and Mouse Combo,Wireless keyboard and mouse set,4200,Electronics
+P092,Monitor Stand,Adjustable monitor stand,8800,Electronics
+P093,T-shirt,Graphic printed t-shirt,1500,Clothing
+P094,Running Shoes,Performance running shoes,4500,Footwear
+P095,Notebook,Leather-bound notebook,1200,Stationery
+P096,Wireless Headphones,Over-ear wireless headphones,19000,Electronics
+P097,Eyeshadow Palette,12-shade eyeshadow palette,1100,Beauty
+P098,Travel Pillow,Memory foam travel pillow,1400,Accessories
+P099,Pendant,Gold pendant with gemstone,15000,Jewelry
+P100,Coffee Grinder,Electric coffee grinder,7500,Home Appliances
