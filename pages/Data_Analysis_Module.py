@@ -36,39 +36,48 @@ if not( product_file and sales_file and customer_file):
     st.markdown("""
     ### 📜 **Data Submission Guidelines**  
 
-    **Attention, Data Custodian.** The integrity of this system relies upon the precision and structure of the data provided. Adhere strictly to the following directives to ensure seamless processing.  
+    **Attention, Business Analyst.** The accuracy and reliability of TheProfitOracle depend on properly structured data. Follow these guidelines to ensure smooth processing.  
 
     ---
 
     ### ✅ **Accepted File Formats:**  
-    - **CSV (`.csv`)** – Standard format for structured data.  
-    - **Excel (`.xls`, `.xlsx`, `.xlsm`, `.xlsb`)** – Widely used for tabular data storage.  
+    - **CSV (`.csv`)** – Recommended for structured data.  
+    - **Excel (`.xls`, `.xlsx`)** – Supported for tabular data.  
 
-    **⛔ Rejected Formats:** `.txt`, `.pdf`, `.png`, `.jpg`, `.docx`, `.pptx`. This system is designed for analytical rigor, not document archiving or image processing.  
+    **⛔ Rejected Formats:** `.txt`, `.pdf`, `.png`, `.jpg`, `.docx`, `.pptx`. This tool is designed for numerical and structured business data analysis.  
 
     ---
 
     ### 📏 **Data Structure Requirements**  
 
-    - **🆔 Roll Number:** Must be unique, complete, and free from duplication.  
-    - **📊 Subject Data:**  
-    - Attendance and marks must adhere to the format: `"Subject Attendance"` and `"Subject Marks"` (e.g., `"Mathematics Attendance"`, `"Mathematics Marks"`).  
-    - If attendance data is provided for a subject, corresponding marks data **must** be present, and vice versa.  
-    - **👨‍🏫 Teacher Column (Optional):** If included, must follow the format `"Subject Teacher"` (e.g., `"Mathematics Teacher"`).  
+    #### ** Mandatory Files**  
+    - **Products Data** (`PID`, `Name`, `Description`, `Price`, etc.)  
+    - **Sales Data** (`Time`, `Date`, `CID`, `Quantity`, `SID`, `Sales Price`, `Location`, etc.)  
+    - **Customers Data** (`CID`, `Age`, `Gender`, etc.)  
+
+    Each file must follow the correct structure, and column names should be consistent.  
 
     ---
 
     ### 🔢 **Numerical Standards**  
-    - Attendance and marks must be numerical values within **0–100**.  
-    - Decimal precision should not exceed two places.  
+    - Sales prices and quantities must be **positive numerical values**.  
+    - Dates must follow the format **YYYY-MM-DD** for consistency.  
 
     ---
 
     ### 🚧 **Restrictions & Compliance**  
-    - A maximum of **N subjects** is permissible.  
-    - Extraneous columns outside of **Roll No, Attendance, Marks, Teacher** will be discarded.  
+    - Ensure **no missing values** in mandatory fields.  
+    - Unique identifiers (`PID`, `CID`, `SID`) should not have duplicates.  
 
     ---
+
+    ### ⚠ **Non-Compliance Consequences**  
+    - Incorrect data formats will result in **automatic rejection**.  
+    - Errors will be flagged with **detailed messages**.  
+    - Continuous violations may lead to **denial of processing**.  
+
+    Align your submission with these standards to enable accurate business insights and predictions.  
+
 
     ### ⚠ **Non-Compliance Consequences**  
     - Invalid data will result in rejection without exception.  

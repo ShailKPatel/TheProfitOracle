@@ -1,43 +1,37 @@
-# Sales Analysis and Prediction System
+# Sales Analysis and Prediction System Documentation
 
-## 📌 **Project Overview**
-The **Sales Analysis and Prediction System** is a Python-based tool designed for **small businesses** to analyze and forecast sales trends. It allows users to upload **sales, product, and customer data** and generates insightful visualizations, trend analysis, and predictions using **Machine Learning (Linear Regression, Multiple Linear Regression, and Clustering).**
+## 1. **Project Overview**
+The **Sales Analysis and Prediction System** is a Python-based application that helps **small businesses** analyze and predict sales trends. It enables users to upload **sales, product, and customer data**, generating insightful visualizations, trend analyses, and predictions using **Machine Learning (Linear Regression, Multiple Linear Regression, and Clustering).**
 
-### 🔹 **Key Features**
-- **Drag-and-Drop File Upload**: Users can upload sales data in CSV format.
-- **Mandatory & Optional Files**:
-  - **Products File (Mandatory)** – Contains product details (`PID`, `Name`, `Description`, `Price`, etc.).
-  - **Sales File (Mandatory)** – Contains sales transaction data (`Time`, `Date`, `CID`, `Quantity`, `SID`, `Sales Price`, `Location`, etc.).
-  - **Customers File (Optional)** – Contains customer details (`CID`, `Age`, `Gender`, etc.).
+### **Key Features**
+- **Drag-and-Drop File Upload**: Upload sales data in CSV format.
 - **Data Processing & Cleaning**: Handles missing values and converts necessary data types.
 - **Statistical & Visual Analysis**:
-  - Correlation Analysis between **Attendance, Theory, and Practical Marks**.
-  - Sales Trends **(Daily, Weekly, and Monthly Moving Averages)** using **Matplotlib & Plotly**.
+  - Sales trends **(Daily, Weekly, Monthly Moving Averages)** using **Matplotlib & Plotly**.
+  - Correlation Analysis between sales data.
 - **Machine Learning Predictions**:
   - **Linear Regression & Multiple Linear Regression** for sales forecasting.
   - **Clustering Analysis** for customer segmentation.
 
 ---
 
-## 📁 **Project Structure**
+## 2. **Project Structure**
 ```
-TheProfitOracle/
+SalesAnalysisSystem/
 │   index.py
 │   LICENSE
 │   README.md
 │   requirements.txt
-│   review_records.txt
 │
 ├───assets
 │       logo.png
 │
-├───data_preproccesing
+├───data_preprocessing
 │       data_preprocessor.py
 │
 ├───pages
 │       Dashboard_Home.py
 │       Data_Analysis_Module.py
-│       Development_Credits.py
 │       Technological_Framework.py
 │       View_Review.py
 │
@@ -57,7 +51,7 @@ TheProfitOracle/
 
 ---
 
-## 🔧 **Installation & Setup**
+## 3. **Installation & Setup**
 ### **1️⃣ Install Python & Dependencies**
 Ensure you have **Python 3.10+** installed. Then, install dependencies:
 ```bash
@@ -72,13 +66,14 @@ python index.py
 
 ---
 
-## 📊 **Sales Analysis & Visualization**
-The system generates sales trends using **Matplotlib**. The `plot_sales_trends` function:
-1. **Daily Sales Trends** with a **7-day moving average**.
-2. **Weekly Sales Trends** with a **4-week moving average**.
-3. **Monthly Sales Trends** with a **3-month moving average**.
+## 4. **Sales Analysis & Visualization**
+### **Generating Sales Trends**
+The system generates sales trends using **Matplotlib**. The `plot_sales_trends` function provides:
+- **Daily Sales Trends** with a **7-day moving average**.
+- **Weekly Sales Trends** with a **4-week moving average**.
+- **Monthly Sales Trends** with a **3-month moving average**.
 
-**Example Code:**
+#### **Example Code:**
 ```python
 import pandas as pd
 from prediction.sales_analysis import plot_sales_trends
@@ -90,10 +85,10 @@ fig.show()
 
 ---
 
-## 🧠 **Machine Learning: Linear Regression for Sales Prediction**
+## 5. **Machine Learning: Sales Prediction**
 The system applies **Linear Regression** to predict future sales trends.
 
-**Example Code:**
+#### **Example Code:**
 ```python
 from prediction.linear_regression import linear_regression_custom
 predictions = linear_regression_custom(sales_df)
@@ -102,7 +97,7 @@ print(predictions)
 
 ---
 
-## ❗ **Common Errors & Fixes**
+## 6. **Common Errors & Fixes**
 ### **1️⃣ `ModuleNotFoundError: No module named 'linear_regression'`**
 #### **Fix:**
 - Ensure `linear_regression.py` exists in the `prediction/` folder.
@@ -117,18 +112,18 @@ print(predictions)
   ```
 - Run the script from the correct directory:
   ```bash
-  cd M:\TheProfitOracle\
+  cd SalesAnalysisSystem/
   python index.py
   ```
 
 ---
 
-## 📜 **License**
+## 7. **License**
 This project is open-source and available under the **MIT License**.
 
 ---
 
-## 🤝 **Contributing**
+## 8. **Contributing**
 Contributions are welcome! Feel free to fork this repo and submit a pull request.
 
 ### **Author:**
