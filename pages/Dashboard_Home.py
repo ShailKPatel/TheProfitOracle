@@ -1,4 +1,4 @@
-import shttps://github.com/ShailKPatel/TheProfitOracle/tree/maintreamlit as st
+import streamlit as st
 
 # Sales Analysis & Prediction System
 
