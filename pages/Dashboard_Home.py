@@ -1,4 +1,4 @@
-import streamlit as st
+import shttps://github.com/ShailKPatel/TheProfitOracle/tree/maintreamlit as st
 
 # Sales Analysis & Prediction System
 
@@ -8,7 +8,7 @@ st.logo(logo_path, size='large')
 
 # Project Overview
 
-st.title("📈 Sales Analysis & Prediction System")
+st.title("The Profit Oracle")
 
 st.markdown("""
 This system provides automated sales analysis and forecasting for small businesses.  
