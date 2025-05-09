@@ -1,0 +1,5 @@
+The feature breakdowns helped me rethink how to engineer inputs for film-related datasets. A confusion matrix export would be a great add-on!
+Loved how it separates raw and derived features. Helped clarify my own model pipeline. Any chance you could include genre distribution charts?
+The release timing logic (weeks_before_oscar) is brilliant. Wish there was a way to simulate predictions on upcoming film slates.
+Really appreciated how monetary features were normalized. Could use a toggle to switch between raw and log-scaled values in the outputs.
+Prestige signals like director/actor nominations were super helpful. Would be cool to have a live leaderboard of current year films ranked by predicted win chance.
